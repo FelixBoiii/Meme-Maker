@@ -8,7 +8,39 @@ function memeGenerator(img, topText, bottomText, topTextSize, bottomTextSize){
   canvas.height = img.height;
 
   //clears canvas
-  ctx.clearRect(0,0, canvas.width, canvas.height)
+  ctx.clearRect(0,0, canvas.width, canvas.height);
+
+  //draw main image
+  ctx.drawImage(img ,0 ,0);
+
+  //text style: the border
+  ctx.fillStyle  = 'white';
+  ctx.strokeStyle = 'black';
+  ctx.textAlign = 'center';
+
+  //top text sizes
+  fontSize = canvas.width * topTextSize;
+  ctx.font = fontSize + 'px Imact';
+  ctx.lineWidth = fontSize / 20;
+
+  //draw top text
+  ctx.textBaseLine = 'top';
+  topText.split('\n').forEach(function (t, i){
+    ctx.fillText(t, canvas.width / 2, i * fontSize, canvas.width);
+    ctx.strokeText(t, canvas.width / 2, i * fontSize, canvas.width);
+  });
+
+  //bottom text sizes
+  fontSize = canvas.width * bottomTextSize;
+  ctx.font = fontSize + 'px Imact';
+  ctx.lineWidth = fontSize / 20;
+
+  //draw bottom text
+  ctx.textBaseLine = 'bottom';
+  bottomText.split('\n')..reverse().forEach(function (t, i){
+    ctx.fillText(t, canvas.width / 2, canvas.height - i * fontSize, canvas.width);
+    ctx.strokeText(t, canvas.width / 2, canvas.height -  i * fontSize, canvas.width);
+  });
 }
 
 function init(){
