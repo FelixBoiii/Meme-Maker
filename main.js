@@ -27,6 +27,16 @@ function init(){
   //default text
   topTextInput.value = bottomTextInput.value = 'Demo\nText';
 
+  generateBtn.addEventListener('click', function(){
+    let reader = new FileReader();
+    reader.onload = function(){
+      let img = new Image;
+      img.scr = reader.result;
+      memeGenerator(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
+    };
+    reader.readAsDataURL(imageInput.files[0]);
+  });
+
 }
 
 init();
