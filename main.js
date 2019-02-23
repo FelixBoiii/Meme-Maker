@@ -37,7 +37,7 @@ function memeGenerator(img, topText, bottomText, topTextSize, bottomTextSize){
 
   //draw bottom text
   ctx.textBaseLine = 'bottom';
-  bottomText.split('\n')..reverse().forEach(function (t, i){
+  bottomText.split('\n').reverse().forEach(function (t, i){
     ctx.fillText(t, canvas.width / 2, canvas.height - i * fontSize, canvas.width);
     ctx.strokeText(t, canvas.width / 2, canvas.height -  i * fontSize, canvas.width);
   });
