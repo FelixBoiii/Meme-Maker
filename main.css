@@ -10,3 +10,7 @@
 #meme-canvas {
     width: 300px;
 }
+#top-text{
+  max-width: 5em;
+  max-height: 2em;
+}
