@@ -48,12 +48,11 @@ function init () {
     bottomTextInput = document.getElementById('bottom-text');
     topTextSizeInput = document.getElementById('top-text-size-input');
     bottomTextSizeInput = document.getElementById('bottom-text-size-input');
-    imageInput = document.getElementById('image-input');
     generateBtn = document.getElementById('generate-btn');
     canvas = document.getElementById('meme-canvas');
-
+    imageInput = document.getElementById('image-input');
+    
     ctx = canvas.getContext('2d');
-
     canvas.width = canvas.height = 0;
 
     // Default/Demo text
@@ -71,5 +70,7 @@ function init () {
         reader.readAsDataURL(imageInput.files[0]);
     });
 }
+
+
 
 init();
