@@ -51,7 +51,7 @@ function init () {
     generateBtn = document.getElementById('generate-btn');
     canvas = document.getElementById('meme-canvas');
     imageInput = document.getElementById('image-input');
-    
+
     ctx = canvas.getContext('2d');
     canvas.width = canvas.height = 0;
 
@@ -65,6 +65,11 @@ function init () {
         reader.onload = function () {
             let img = new Image;
             img.src = reader.result;
+            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
+        };
+        reader.readAsDataURL(imageInput.files[0]);
+    });
+    topTextSizeInput.addEventListener('click', function () {
             generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
         };
         reader.readAsDataURL(imageInput.files[0]);
