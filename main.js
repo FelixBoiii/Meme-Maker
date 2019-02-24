@@ -57,7 +57,9 @@ function init () {
 
     // Default/Demo text
     topTextInput.value = bottomTextInput.value = 'Demo\nText';
-
+    imageInput.onload = function(){
+      alert("image is loaded");
+    }
     // Generate button click listener
     generateBtn.addEventListener('click', function () {
         // Read image as DataURL using the FileReader API
