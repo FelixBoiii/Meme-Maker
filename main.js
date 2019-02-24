@@ -69,11 +69,6 @@ function init () {
         };
         reader.readAsDataURL(imageInput.files[0]);
     });
-    topTextSizeInput.addEventListener('click', function () {
-            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
-        };
-        reader.readAsDataURL(imageInput.files[0]);
-    });
 }
 
 
