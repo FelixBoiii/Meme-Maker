@@ -11,10 +11,14 @@
     width: 300px;
 }
 #top-text{
+  min-width:15em;
+  min-height:4em;
   max-width: 15em;
   max-height: 4em;
 }
 #bottom-text{
+  min-width:15em;
+  min-height:4em;
   max-width: 15em;
   max-height: 4em;
 }
