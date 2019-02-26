@@ -70,6 +70,7 @@ function init () {
     });
 }
 
+
 function download_image(){
   var canvas = document.getElementById("meme-canvas");
   image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
@@ -79,5 +80,26 @@ function download_image(){
   link.click();
 }
 
+function download_image2(){
+    var canvas = document.getElementById("meme-canvas");
+    var link = document.createElement("a");
+      var imgData = canvas.toDataURL({    format: 'png',
+        multiplier: 4});
+      var strDataURI = imgData.substr(22, imgData.length);
+      var blob = dataURLtoBlob(imgData);
+      var objurl = URL.createObjectURL(blob);
+      link.download = "meme.png";
+      link.href = objurl;
+     link.click();
+}
+
+function dataURLtoBlob(dataurl) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], {type:mime});
+}
 
 init();
