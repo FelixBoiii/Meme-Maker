@@ -20,7 +20,7 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize) {
     // Top text font size
     fontSize = canvas.width * topTextSize;
     ctx.font = fontSize + 'px Impact';
-    ctx.lineWidth = fontSize / 20;
+    ctx.lineWidth = fontSize / 30;
 
     // Draw top text
     ctx.textBaseline = 'top';
@@ -32,7 +32,7 @@ function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize) {
     // Bottom text font size
     fontSize = canvas.width * bottomTextSize;
     ctx.font = fontSize + 'px Impact';
-    ctx.lineWidth = fontSize / 20;
+    ctx.lineWidth = fontSize / 30;
 
     // Draw bottom text
     ctx.textBaseline = 'bottom';
@@ -70,6 +70,11 @@ function init () {
     });
 }
 
+function download(){
+  var download = document.getElementById("download");
+  var image = document.getElementById("meme-canvas").toDataURL("image/png").replace("image/png", "image/octet-stream");
+  download.setAtribute("href", image);
+}
 
 
 init();
