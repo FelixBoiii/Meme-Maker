@@ -52,15 +52,17 @@ function init() {
     // Default/Demo text
     topTextInput.value = bottomTextInput.value = 'Demo\nText';
     // Generate button click listener
+
     generateBtn.addEventListener('click', function() {
+      let reader = new FileReader();
+      reader.onload = function() {
+          let img = new Image;
+          img.src = reader.result;
+          generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
+      };
+      reader.readAsDataURL(imageInput.files[0]);
         // Read image as DataURL using the FileReader API
-        let reader = new FileReader();
-        reader.onload = function() {
-            let img = new Image;
-            img.src = reader.result;
-            generateMeme(img, topTextInput.value, bottomTextInput.value, topTextSizeInput.value, bottomTextSizeInput.value);
-        };
-        reader.readAsDataURL(imageInput.files[0]);
+
     });
 }
 
