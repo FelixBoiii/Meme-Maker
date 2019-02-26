@@ -70,10 +70,13 @@ function init () {
     });
 }
 
-function download(){
-  var download = document.getElementById("download");
-  var image = document.getElementById("meme-canvas").toDataURL("image/png").replace("image/png", "image/octet-stream");
-  download.setAtribute("href", image);
+function download_image(){
+  var canvas = document.getElementById("meme-canvas");
+  image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+  var link = document.createElement('a');
+  link.download = "meme.png";
+  link.href = image;
+  link.click();
 }
 
 
