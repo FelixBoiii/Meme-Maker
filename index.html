@@ -7,24 +7,26 @@
     <title>Meme Maker - make memes fast and easy</title>
   </head>
   <body>
-    <p>
-        <button class="button-primary button-large button-round" ><input type="file" id="image-input" accept="image/*"></button>
-    </p>
-    <p>
-         <textarea id="top-text"></textarea>
-         Text size: <input type="range" id="top-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
-     </p>
-     <p>
-         <textarea id="bottom-text"></textarea>
-         Text size: <input type="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
-     </p>
-     <p>
-         <button id="generate-btn">Generate</button>
-     </p>
-     <p>
-         <canvas id="meme-canvas" title="Right click -> &quot;Save image as...&quot;"></canvas>
-     </p>
-    <button onClick="download_image2()">Download</button>
-    <script src="main.js"></script>
+    <div class="mainContainer">
+      <p>
+          <button class="button-primary button-large button-round" ><input type="file" id="image-input" accept="image/*"></button>
+      </p>
+      <p>
+           <textarea id="top_text"></textarea>
+           Text size: <input type="range" id="top_text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
+       </p>
+       <p>
+           <textarea id="bottom_text"></textarea>
+           Text size: <input type="range" id="bottom_text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
+       </p>
+       <p>
+           <button id="generate-btn">Generate</button>
+       </p>
+       <p>
+           <canvas id="meme-canvas" title="Right click -> &quot;Save image as...&quot;"></canvas>
+       </p>
+      <button onClick="download_image2()">Download</button>
+      <script src="main.js"></script>
+    </div>
   </body>
 </html>

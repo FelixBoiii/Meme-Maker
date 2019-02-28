@@ -6,8 +6,11 @@
 * {
     font: inherit;
 }
+.mainContainer{
+  text-align: center;
+}
 #meme-canvas {
-    width: 300px;
+  width : 500;
 }
 #top-text{
   min-width:15em;
